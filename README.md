@@ -1,4 +1,4 @@
-# 60 Days of Learning 2025 – MERN Stack
+# 60 Days of Learning 2025
 
 Welcome to my **#60DaysOfLearning2025** challenge organized by **@lftechnology** under the **#LearningWithLeapfrog** initiative.
 
