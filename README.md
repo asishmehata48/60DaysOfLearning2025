@@ -8,9 +8,9 @@ Stay tuned for daily updates, code snippets, notes, and mini-projects as I docum
 
 **Connect with me:**
 
-- 🔗 GitHub: [github.com/asishmehata48](https://github.com/asishmehata48)
-- 🐦 X (Twitter): [x.com/asish_mehata](https://x.com/asish_mehata)
-- 💼 LinkedIn: [linkedin.com/in/asishmehata48](https://www.linkedin.com/in/asishmehata48)
+- 🔗 GitHub: [here](https://github.com/asishmehata48)
+- 🐦 X (Twitter): [here](https://x.com/asish_mehata)
+- 💼 LinkedIn: [here](https://www.linkedin.com/in/asishmehata48)
 
 
 ---
