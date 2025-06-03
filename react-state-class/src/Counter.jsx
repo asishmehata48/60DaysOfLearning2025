@@ -6,12 +6,12 @@ export default function Counter() {
     console.log(`count: ${count}`);
 
     let incCount = ()  => {
-        // setCount((currCount) => {
-        //     return currCount+1;
-        // });
-        // setCount((currCount) => {
-        //     return currCount+1;
-        // });
+        setCount((currCount) => {
+            return currCount+1;
+        });
+        setCount((currCount) => {
+            return currCount+1;
+        });
         setCount(25);
     }
     return (
