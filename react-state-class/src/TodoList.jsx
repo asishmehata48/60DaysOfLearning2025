@@ -12,61 +12,6 @@ export default function TodoList() {
     let updateTodoValue = (event) => {
         setNewTodo(event.target.value);
     }
-    let styles = {
-    container: {
-        maxWidth: "500px",
-        margin: "50px auto",
-        padding: "20px",
-        borderRadius: "10px",
-        backgroundColor: "#f7f7f7",
-        boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
-        fontFamily: "Arial, sans-serif",
-        textAlign: "center",
-    },
-    heading: {
-        marginBottom: "20px",
-        color: "#333",
-    },
-    inputContainer: {
-        display: "flex",
-        justifyContent: "center",
-        gap: "10px",
-        marginBottom: "20px",
-    },
-    input: {
-        padding: "10px",
-        fontSize: "16px",
-        width: "70%",
-        borderRadius: "5px",
-        border: "1px solid #ccc",
-    },
-    button: {
-        padding: "10px 16px",
-        fontSize: "16px",
-        backgroundColor: "darkblue",
-        color: "white",
-        border: "none",
-        borderRadius: "5px",
-        cursor: "pointer",
-    },
-    subheading: {
-        marginBottom: "10px",
-        color: "#555",
-    },
-    list: {
-        listStyle: "none",
-        padding: 0,
-    },
-    listItem: {
-        backgroundColor: "#fff",         // white background
-        color: "#000",                   // make sure text is visible
-        padding: "10px",
-        marginBottom: "10px",
-        borderRadius: "5px",
-        textAlign: "left",
-        boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1)",
-    }
-};
     return (
         <div style={styles.container}>
             <h2 style={styles.heading}>To-do List</h2>
