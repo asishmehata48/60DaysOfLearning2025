@@ -8,6 +8,7 @@ export default function TodoList() {
         setTodos([...todos, { text: newTodo, completed: false }]);
         setNewTodo("");
     };
+    
 
     let updateTodoValue = (event) => {
         setNewTodo(event.target.value);
