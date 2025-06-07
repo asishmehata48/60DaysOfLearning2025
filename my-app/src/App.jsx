@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [color, setColor] = useState('olive');
+  const [color, setColor] = useState('gray');
   const colors = ['red', 'green', 'blue', 'yellow', 'purple', 'black', 'orange'];
 
   return (
