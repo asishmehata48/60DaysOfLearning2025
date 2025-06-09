@@ -1,0 +1,19 @@
+.ticket {
+    border: 1px solid pink;
+    border-radius: 14px;
+}
+
+.button {
+  background-color: #007BFF; /* Bootstrap-like blue */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
