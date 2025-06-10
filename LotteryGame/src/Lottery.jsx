@@ -10,16 +10,18 @@ export default function Lottery() {
         setTicket(genTicket(3));
     }
     return (
-        <div>
-            <h1>Lottery Game</h1>
-            <div className="ticket">
-                <span>{ticket[0]}</span>
-                <span>{ticket[1]}</span>
-                <span>{ticket[2]}</span>
+        <div >
+            <div className="centered">
+                <h1>Lottery Game</h1>
+                <div className="ticket">
+                    <span>{ticket[0]}</span>
+                    <span>{ticket[1]}</span>
+                    <span>{ticket[2]}</span>
+                </div>
+                <br /><br />
+                <button onClick={buyTicket} className="button">Buy New Ticket</button>
+                <h3>{isWinning ? "Congratulations, you won!" : "Try again!"}</h3>
             </div>
-            <br /><br />
-            <button onClick={buyTicket} className="button">Buy New Ticket</button>
-            <h3>{isWinning ? "Congratulations, you won!" : "Try again!"}</h3>
         </div>
     );
 }

@@ -1,3 +1,15 @@
+*{
+  background-color: black;
+  color: white;
+}
+
+.centered {
+  text-align: center;
+  margin-top: 40px;
+}
+
+
+
 .ticket {
     border: 1px solid pink;
     border-radius: 14px;
@@ -15,5 +27,5 @@
 }
 
 .button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0a3563; /* Darker blue on hover */
 }
