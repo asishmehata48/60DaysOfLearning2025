@@ -1,4 +1,3 @@
-
 const CurrencyInput = ({ amount, onAmountChange }) => (
   <input
     type="number"
