@@ -35,7 +35,7 @@ export default function Home() {
                 </div>
 
                 <div className="absolute inset-0 w-full sm:my-20 sm:pt-1 pt-12 h-full ">
-                    <img className="w-120 rounded-full shadow" src="https://github.com/asishmehata48/SecureTech/blob/main/logo.png?raw=true" alt="image1" style={{ backgroundImage: 'linear-gradient(to right, #6a11cb, #2575fc)' }}
+                    <img className="w-100 rounded-full shadow" src="https://github.com/asishmehata48/SecureTech/blob/main/logo.png?raw=true" alt="image1" style={{ backgroundImage: 'linear-gradient(to right, #6a11cb, #2575fc)' }}
                      />
                 </div>
             </aside>
@@ -47,7 +47,7 @@ export default function Home() {
                 }}/>
             </div>
 
-            <h1 className="text-center text-2xl sm:text-5xl py-10 font-medium"></h1>
+            <h1 className="text-center text-2xl sm:text-5xl py-10 font-medium">Different Linear Gradient</h1>
         </div>
     );
 }
