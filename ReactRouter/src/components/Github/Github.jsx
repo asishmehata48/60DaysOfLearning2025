@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 function Github() {
 
-    const [data, setData] = useState([]);
+    const data = useLoaderData();
 
-    useEffect (() => {
-        fetch('https://api.github.com/users/asishmehata48')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            setData(data)
-        })
-    }, [])
+    // const [data, setData] = useState([]);
+
+    // useEffect (() => {
+    //     fetch('https://api.github.com/users/asishmehata48')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log(data);
+    //         setData(data)
+    //     })
+    // }, [])
   return (
     <div className="flex flex-wrap items-center text-center m-4 bg-gray-600 text-white p-4 text-3xl">
         <div className="w-full md:w-1/2">
@@ -29,3 +32,14 @@ function Github() {
 
 
 export default Github;
+
+export async function githubInfoLoader() {
+  const response = await fetch('https://api.github.com/users/asishmehata48');
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch GitHub data');
+  }
+
+  const data = await response.json(); // ✅ Safe now
+  return data;
+}
