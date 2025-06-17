@@ -1,4 +1,5 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
 export default function About() {
     return (
@@ -19,19 +20,23 @@ export default function About() {
                         </h2>
                         <p className="mt-6 text-gray-600">
                         With the increasing reliance on digital technologies, securing personal and organizational data has become crucial. SecureTech aims to provide accessible tools, educational resources, and practical solutions to help individuals and communities understand and protect themselves against cybercrimes.
+                        </p>
 
+                        <p className="mt-6 text-gray-600">
                         Our platform offers a comprehensive suite of features including:
-
-                        <ol>
+                        </p>
+                        <ol className="list-decimal list-inside text-gray-700 mt-4 space-y-1">
                             <li>Cybersecurity best practices and guidelines</li>
                             <li>Real-time alerts on emerging cyber threats</li>
                             <li>Tools for secure communication and data protection</li>
                             <li>Awareness campaigns and training modules for diverse audiences</li>
                         </ol>
+                        <p className="mt-6 text-gray-600">
                         Built using modern web technologies like React and Vite, SecureTech focuses on delivering an intuitive and secure user experience while promoting digital safety.
 
                         Join us in building a safer digital world through education, innovation, and community collaboration.   
                         </p>
+                        <outlet />
                     </div>
                 </div>
             </div>
