@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
+import { FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
 
@@ -68,21 +68,21 @@ const Footer = () => {
                 href="#" 
                 className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white transition-colors"
               >
-                <FaFacebookF className="w-5 h-5" />
+              <FaFacebookF className="w-5 h-5" />
               </motion.a>
               <motion.a 
                 whileHover={{ scale: 1.1 }}
                 href="#" 
                 className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-400 hover:text-white transition-colors"
               >
-                <FaTwitter className="w-5 h-5" />
+              <FaTwitter className="w-5 h-5" />
               </motion.a>
               <motion.a 
                 whileHover={{ scale: 1.1 }}
                 href="#" 
                 className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blue-700 hover:text-white transition-colors"
               >
-                <FaLinkedinIn className="w-5 h-5" />
+              <FaLinkedinIn className="w-5 h-5" />
               </motion.a>
             </motion.div>
           </motion.div>
