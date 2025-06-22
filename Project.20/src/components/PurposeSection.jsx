@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
 
+
 const PurposeSection = () => {
   const features = [
     {
