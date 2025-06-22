@@ -3,6 +3,7 @@ import { FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagram } from 'react-icons/f
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
 
+
 const Footer = () => {
   const footerLinks = {
     company: [
