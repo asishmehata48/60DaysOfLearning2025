@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import monitorCardBg from '../assets/monitor-card.webp';
 
+
 const MonitorSection = () => {
   return (
     <motion.section 
