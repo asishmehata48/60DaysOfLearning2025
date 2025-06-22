@@ -3,6 +3,7 @@ import { HiArrowRight } from 'react-icons/hi'
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
 
+
 const NewsletterSection = () => {
   return (
     <section id="newsletter" className="section-container px-4 md:px-0">
