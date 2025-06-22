@@ -6,6 +6,7 @@ import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
 
+
 const testimonials = [
   {
     id: 1,
