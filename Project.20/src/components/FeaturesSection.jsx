@@ -21,6 +21,7 @@ const FeaturesSection = () => {
     }
   ]
 
+  
   return (
     <motion.section 
       variants={fadeIn('up', 0.2)}
