@@ -1,7 +1,13 @@
-let n = 5;
+// let n = 5;
 
-for (let i=0; i<n; i ++) {
-    console.log("hello, ", i);
+// for (let i=0; i<n; i ++) {
+//     console.log("hello, ", i);
+// }
+
+// console.log("bye");
+
+let args = process.argv;
+
+for (let i=0; i <args.length; i ++) {
+    console.log("hello to, ", args[i]);
 }
-
-console.log("bye");
