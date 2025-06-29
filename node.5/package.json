@@ -1,0 +1,15 @@
+{
+  "name": "node.5",
+  "version": "1.0.0",
+  "description": "This is my 5th Day",
+  "license": "ISC",
+  "author": "Asish Mehata",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "figlet": "^1.8.1"
+  }
+}
