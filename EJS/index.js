@@ -17,6 +17,14 @@ app.get("/hello", (req,res) => {
     res.send("Hello");
 });
 
+
+app.get("/rolldice", (req,res) => {
+    res.render("rolldice.ejs");
+});
+
+
+
+
 app.listen(port, () => {
     console.log( `listening on port ${port}`)
 });
