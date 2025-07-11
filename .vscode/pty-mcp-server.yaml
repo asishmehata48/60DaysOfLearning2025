@@ -1,0 +1,13 @@
+logDir : '/home/asishmehata48/60DaysOfLearning2025/.vscode/pty-mcp-server/logs'
+logLevel : 'Debug'
+toolsDir: '/home/asishmehata48/60DaysOfLearning2025/.vscode/pty-mcp-server/tools'
+promptsDir: '/home/asishmehata48/60DaysOfLearning2025/.vscode/pty-mcp-server/prompts'
+resourcesDir: '/home/asishmehata48/60DaysOfLearning2025/.vscode/pty-mcp-server/resources'
+prompts:
+  - '>>>'
+  - ']#'
+  - ']$'
+  - ')?'
+  - 'Password:'
+  - 'password:'
+  - 'ghci>'

@@ -1,0 +1,328 @@
+[
+  {
+    "name": "pty-connect",
+    "description": "Runs a command via a pseudo-terminal (pty) to interact with external tools or services, with optional arguments.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "string",
+          "description": "Name of the command to run."
+        },
+        "arguments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of arguments for the command."
+        }
+      },
+      "required": [
+        "command"
+      ]
+    }
+  },
+  {
+    "name": "pty-terminate",
+    "description": "Forcefully terminates an active pseudo-terminal (PTY) connection.",
+    "inputSchema": {"type": "object"}
+  },
+  {
+    "name": "pty-message",
+    "description": "pms-messages is a tool for sending structured instructions or commands to a running PTY session. It abstracts direct terminal input, allowing the LLM (MCP client) to interact with the PTY process in a controlled and programmable way without needing to know what is running inside.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "arguments": {
+          "type": "string",
+          "description": "df -k"
+        }
+      },
+      "required": [
+        "arguments"
+      ]
+    }
+  },
+  
+  {
+    "name": "pty-bash",
+    "description": "pty-bash is a tool that launches a bash shell in a pseudo terminal (PTY). It allows the LLM (MCP client) to interact with a real Linux shell in an interactive terminal (PTY). This enables AI to run system commands, collect information, and handle prompts or TUI-based tools as if operated by a human, making it effective for dynamic Linux-based automation and diagnostics.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "arguments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Arguments to pass to /bin/bash command, e.g.,  [\"-i\", \"-l\"]"
+        }
+      },
+      "required": [
+        "arguments"
+      ]
+    }
+  },
+
+  {
+    "name": "pty-ssh",
+    "description": "Establishes an SSH session in a pseudo-terminal with the specified arguments, allowing interaction with remote systems.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "arguments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Arguments to be passed to the SSH command, such as user, host, and optional flags."
+        }
+      },
+      "required": [
+        "arguments"
+      ]
+    }
+  },
+
+  {
+    "name": "pty-telnet",
+    "description": "Launches the telnet command within a pseudo-terminal (PTY) session. This allows interactive communication with a remote Telnet server, enabling the AI to respond to prompts such as 'login:' or 'Password:' just like a human user. The PTY environment ensures that the terminal behaves like a real TTY device, which is required for many Telnet servers.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "arguments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Arguments to be passed to the telnet command, such as user, host, and optional flags."
+        }
+      },
+      "required": [
+        "arguments"
+      ]
+    }
+  },
+
+  {
+    "name": "pty-cabal",
+    "description": "Launches a cabal repl session in a pseudo-terminal using the specified project directory, main source file, and arguments.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "projectDir": {
+          "type": "string",
+          "description": "The directory containing the Haskell project. cabal will use this as the working directory."
+        },
+        "arguments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Command-line arguments to be passed directly to cabal repl on session start."
+        }
+      },
+      "required": [
+        "projectDir"
+      ]
+    }
+  },
+
+  {
+    "name": "pty-stack",
+    "description": "Launches a stack repl session in a pseudo-terminal using the specified project directory, main source file, and arguments.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "projectDir": {
+          "type": "string",
+          "description": "The directory containing the Haskell project. stack will use this as the working directory."
+        },
+        "arguments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Command-line arguments to be passed directly to stack repl on session start."
+        }
+      },
+      "required": [
+        "projectDir"
+      ]
+    }
+  },
+
+  {
+    "name": "pty-ghci",
+    "description": "Launches a GHCi session in a pseudo-terminal using the specified project directory, main source file, and arguments.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "projectDir": {
+          "type": "string",
+          "description": "The directory containing the Haskell project. GHCi will use this as the working directory."
+        },
+        "startupFile": {
+          "type": "string",
+          "description": "The Haskell source file to load on startup, typically Main.hs or the entry point for the application. This should be provided as a full absolute path."
+        },
+        "arguments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Command-line arguments to be passed directly to GHCi on session start."
+        }
+      },
+      "required": [
+        "projectDir"
+      ]
+    }
+  },
+  {
+    "name": "proc-spawn",
+    "description": "Spawns an external process using the specified arguments and enables interactive communication via standard input and output. Unlike PTY-based execution, this communicates directly with the process using the runProcess function without allocating a pseudo-terminal. Suitable for non-TUI, stdin/stdout-based interactive programs.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "command": {
+          "type": "string",
+          "description": "Name of the command to run."
+        },
+        "arguments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of arguments for the command."
+        }
+      },
+      "required": [
+        "command"
+      ]
+    }
+  },
+  {
+    "name": "proc-terminate",
+    "description": "Forcefully terminates a running process created via runProcess.",
+    "inputSchema": {"type": "object"}
+  },
+  {
+    "name": "proc-message",
+    "description": "Sends structured text-based instructions or commands to a subprocess started with runProcess. It provides a programmable interface for interacting with the process via standard input.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "arguments": {
+          "type": "string",
+          "description": "df -k"
+        }
+      },
+      "required": [
+        "arguments"
+      ]
+    }
+  },
+
+  {
+    "name": "socket-open",
+    "description": "This tool initiates a socket connection to the specified host and port.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "host": {
+          "type": "string",
+          "description": "The hostname or IP address to connect to (e.g., '127.0.0.1' or 'localhost')."
+        },
+        "port": {
+          "type": "string",
+          "description": "The port number to connect to, provided as a string (e.g., '5000')."
+        }
+      },
+      "required": [
+        "host",
+        "port"
+      ]
+    }
+  },
+  {
+    "name": "socket-close",
+    "description": "This tool close active socket connection that was previously established using the 'socket-opne' tool.",
+    "inputSchema": {"type": "object"}
+  },
+  {
+    "name": "socket-read",
+    "description": "Reads the specified number of bytes from the socket. The 'size' parameter indicates how many bytes to read.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "size": {
+          "type": "integer",
+          "description": "The number of bytes to read from the socket"
+        }
+      },
+      "required": [
+        "size"
+      ]
+    }
+  },
+  {
+    "name": "socket-write",
+    "description": "Write a sequence of bytes to the socket",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+          },
+          "description": "An array of byte values (integers between 0 and 255) to send"
+        }
+      },
+      "required": [
+        "data"
+      ]
+    }
+  },
+  {
+    "name": "socket-message",
+    "description": "This tool sends a message over the active socket connection.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "arguments": {
+          "type": "string",
+          "description": "The message content to be sent over the socket connection."
+        }
+      },
+      "required": [
+        "arguments"
+      ]
+    }
+  },
+  {
+    "name": "socket-telnet",
+    "description": "A simple Telnet-like communication tool over raw TCP sockets. This tool connects to a specified host and port, sends and receives data, and removes any Telnet IAC (Interpret As Command) sequences from the communication stream. Note: This is a simplified Telnet implementation and does not support full Telnet protocol features.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "host": {
+          "type": "string",
+          "description": "The hostname or IP address to connect to (e.g., '127.0.0.1' or 'localhost')."
+        },
+        "port": {
+          "type": "string",
+          "description": "The port number to connect to, provided as a string (e.g., '5000')."
+        }
+      },
+      "required": [
+        "host",
+        "port"
+      ]
+    }
+  }
+]
+
