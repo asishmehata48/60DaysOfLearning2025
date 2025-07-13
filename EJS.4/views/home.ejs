@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to my site</h1>
+
+<% if (user.isLoggedIn) { %>
+    <p>Hello, <%= user.username %>! Thanks for logging in.</p>
+    <button>Logout</button>
+<% } else { %>
+    <p>Welcome, guest! Please log in to continue.</p>
+    <button>Login</button>
+<% } %>
+
+</body>
+</html>
