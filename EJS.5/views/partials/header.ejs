@@ -1,0 +1,17 @@
+<header>
+    <h1>My Advanced Website</h1>
+
+    <nav>
+        <a href="/">Home</a> |
+
+        <% if (user.isLoggedIn) { %>
+            <span>
+                Welcome, <%= user.name %> (<%= user.role %>)
+            </span>
+        <% } else { %>
+            <a href="/login">Login</a>
+        <% } %>
+    </nav>
+</header>
+
+<hr>
