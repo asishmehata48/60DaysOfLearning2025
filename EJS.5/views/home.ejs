@@ -1,0 +1,25 @@
+<%- include("partials/header", { user: user }) %>
+
+<main>
+    <% if (user.isLoggedIn) { %>
+        <h2>Dashboard</h2>
+
+        <% if (notifications.length > 0) { %>
+            <h3>Your Notifications:</h3>
+
+            <ul>
+                <% notifications.forEach(note => { %>
+                    <%- include("partials/notification", { note: note }) %>
+                <% }) %>
+            </ul>
+
+        <% } else { %>
+            <p>You have no notifications at the moment.</p>
+        <% } %>
+
+    <% } else { %>
+        <p>Please log in to access your dashboard.</p>
+    <% } %>
+</main>
+
+<%- include("partials/footer") %>
