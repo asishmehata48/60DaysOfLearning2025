@@ -8,6 +8,7 @@ app.get("/register", (req,res) => {
 });
 
 app.post("/register" , (req,res) =>{
+    const { user, password } = req.body;
     res.send(`standard POST response. `);
 });
 
