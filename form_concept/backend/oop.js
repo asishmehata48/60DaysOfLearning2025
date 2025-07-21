@@ -1,96 +1,80 @@
+// OOP in JavaScript - Users & Admins Example
+
 console.log("=== Factory Function ===");
-function createPerson(name, age) {
+function createUser(username, email) {
     return {
-        name,
-        age,
-        greet() {
-            console.log(`Hi, I'm ${this.name} and I'm ${this.age}`);
+        username,
+        email,
+        login() {
+            console.log(`${this.username} logged in with email: ${this.email}`);
         }
     };
 }
 
-const person1 = createPerson("Alice", 25);
-person1.greet();
+const user1 = createUser("john_doe", "john@example.com");
+user1.login();
 
 
 console.log("\n=== Constructor Function + new ===");
-function Person(name, age) {
-    this.name = name;
-    this.age = age;
+function User(username, email) {
+    this.username = username;
+    this.email = email;
 }
 
-Person.prototype.greet = function () {
-    console.log(`Hi, I'm ${this.name} and I'm ${this.age}`);
+User.prototype.login = function () {
+    console.log(`${this.username} logged in with email: ${this.email}`);
 };
 
-const person2 = new Person("Bob", 30);
-person2.greet();
+const user2 = new User("jane_doe", "jane@example.com");
+user2.login();
 
 
 console.log("\n=== Class Syntax ===");
-class PersonClass {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
+class UserClass {
+    constructor(username, email) {
+        this.username = username;
+        this.email = email;
     }
 
-    greet() {
-        console.log(`Hi, I'm ${this.name} and I'm ${this.age}`);
+    login() {
+        console.log(`${this.username} logged in with email: ${this.email}`);
     }
 }
 
-const person3 = new PersonClass("Charlie", 35);
-person3.greet();
+const user3 = new UserClass("mark_smith", "mark@example.com");
+user3.login();
 
 
 console.log("\n=== Inheritance - Constructor Function ===");
-function Animal(name) {
-    this.name = name;
+function Admin(username, email, role) {
+    User.call(this, username, email); // call parent constructor
+    this.role = role;
 }
 
-Animal.prototype.speak = function () {
-    console.log(`${this.name} makes a sound`);
+Admin.prototype = Object.create(User.prototype);
+Admin.prototype.constructor = Admin;
+
+Admin.prototype.deleteUser = function (user) {
+    console.log(`${this.username} (admin) deleted user: ${user.username}`);
 };
 
-function Dog(name, breed) {
-    Animal.call(this, name); // call parent constructor
-    this.breed = breed;
-}
-
-Dog.prototype = Object.create(Animal.prototype);
-Dog.prototype.constructor = Dog;
-
-Dog.prototype.bark = function () {
-    console.log(`${this.name} barks!`);
-};
-
-const dog1 = new Dog("Rex", "Labrador");
-dog1.speak();
-dog1.bark();
+const admin1 = new Admin("admin_john", "admin@example.com", "superadmin");
+admin1.login();
+admin1.deleteUser(user2);
 
 
 console.log("\n=== Inheritance - Class + extends ===");
-class AnimalClass {
-    constructor(name) {
-        this.name = name;
+class AdminClass extends UserClass {
+    constructor(username, email, role) {
+        super(username, email);
+        this.role = role;
     }
 
-    speak() {
-        console.log(`${this.name} makes a sound`);
-    }
-}
-
-class DogClass extends AnimalClass {
-    constructor(name, breed) {
-        super(name);
-        this.breed = breed;
-    }
-
-    bark() {
-        console.log(`${this.name} barks!`);
+    deleteUser(user) {
+        console.log(`${this.username} (admin) deleted user: ${user.username}`);
     }
 }
 
-const dog2 = new DogClass("Buddy", "Beagle");
-dog2.speak();
-dog2.bark();
+const admin2 = new AdminClass("admin_jane", "admin.jane@example.com", "moderator");
+admin2.login();
+admin2.deleteUser(user3);
